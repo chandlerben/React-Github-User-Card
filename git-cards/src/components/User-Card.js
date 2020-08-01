@@ -1,4 +1,5 @@
 import React from 'react';
+import './User-Card.css';
 
 
 const UserCard = props => {
@@ -6,11 +7,20 @@ const UserCard = props => {
     console.log('The component is working.')
     console.log("This is the userData", userData)
     return (
-        <div>
-            <h1>THIS IS THE USER CARD</h1>
-            <p>THIS IS THE USER CARD</p>
-            <h1>{userData.login}</h1>
-        </div>
+        <div class="card">
+            <img src={userData.avatar_url} />
+            <div class="card-info">
+                <h3 class="name">{userData.name}</h3>
+                <p class="username">{userData.login}</p>
+                <p>Location: {userData.location}</p>
+                <p>Profile:
+      <a href={userData.html_url}>{userData.html_url}</a>
+                </p>
+                <p>Followers: {userData.followers}</p>
+                <p>Following: {userData.following}</p>
+                <p>Bio: {userData.bio}</p>
+            </div>
+        </div >
     )
 }
 
